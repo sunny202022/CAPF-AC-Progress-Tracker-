@@ -1,6 +1,6 @@
 import React from 'react';
 import { Subject } from '../types';
-import { LayoutDashboard, BookOpen, Scroll, Globe, Scale, Atom, TrendingUp, Leaf, Calculator } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Scroll, Globe, Scale, Atom, TrendingUp, Leaf, Calculator, Settings, FileText, Archive, ClipboardCheck, Code2, Database, BrainCircuit, BarChart, BookA, Terminal } from 'lucide-react';
 
 interface SidebarProps {
   subjects: Subject[];
@@ -21,6 +21,12 @@ const Sidebar: React.FC<SidebarProps> = ({ subjects, activeView, onSelectView, i
       case 'TrendingUp': return <TrendingUp size={20} />;
       case 'Leaf': return <Leaf size={20} />;
       case 'Calculator': return <Calculator size={20} />;
+      case 'PenTool': return <FileText size={20} />;
+      case 'Code': return <Code2 size={20} />;
+      case 'Database': return <Database size={20} />;
+      case 'BrainCircuit': return <BrainCircuit size={20} />;
+      case 'BarChart': return <BarChart size={20} />;
+      case 'BookA': return <BookA size={20} />;
       default: return <BookOpen size={20} />;
     }
   };
@@ -55,14 +61,14 @@ const Sidebar: React.FC<SidebarProps> = ({ subjects, activeView, onSelectView, i
               <LayoutDashboard size={24} />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-slate-900 leading-tight">CAPF AC</h1>
-              <p className="text-xs text-slate-500 font-medium">Prep Tracker</p>
+              <h1 className="text-lg font-bold text-slate-900 leading-tight">Exam Prep</h1>
+              <p className="text-xs text-slate-500 font-medium">Study Tracker</p>
             </div>
           </div>
         </div>
 
         {/* Navigation Items */}
-        <div className="flex-1 overflow-y-auto py-6 px-4 space-y-1 scrollbar-hide">
+        <div className="flex-1 overflow-y-auto py-6 px-4 space-y-1 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-slate-200 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-slate-300">
           <div className="mb-6">
             <p className="px-4 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Overview</p>
             <div 
@@ -71,6 +77,34 @@ const Sidebar: React.FC<SidebarProps> = ({ subjects, activeView, onSelectView, i
             >
               <LayoutDashboard size={20} />
               <span>Dashboard</span>
+            </div>
+            <div 
+              onClick={() => { onSelectView('practice'); setIsMobileOpen(false); }}
+              className={navClasses(activeView === 'practice')}
+            >
+              <ClipboardCheck size={20} />
+              <span>Practice Tests</span>
+            </div>
+             <div 
+              onClick={() => { onSelectView('coding'); setIsMobileOpen(false); }}
+              className={navClasses(activeView === 'coding')}
+            >
+              <Terminal size={20} />
+              <span>Coding Arena</span>
+            </div>
+            <div 
+              onClick={() => { onSelectView('papers'); setIsMobileOpen(false); }}
+              className={navClasses(activeView === 'papers')}
+            >
+              <Archive size={20} />
+              <span>Previous Papers</span>
+            </div>
+            <div 
+              onClick={() => { onSelectView('settings'); setIsMobileOpen(false); }}
+              className={navClasses(activeView === 'settings')}
+            >
+              <Settings size={20} />
+              <span>Settings</span>
             </div>
           </div>
 

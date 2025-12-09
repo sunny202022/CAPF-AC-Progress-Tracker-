@@ -1,6 +1,25 @@
-import { Subject } from './types';
+
+import { Subject, PreviousPaper, TestPaper, CodingProblem } from './types';
 
 export const SYLLABUS_DATA: Subject[] = [
+  // --- EXISTING SUBJECTS ---
+  {
+    id: 'paper2',
+    name: 'Paper 2 (Essay & Comp)',
+    icon: 'PenTool',
+    topics: [
+      {
+        id: 'p2_day1',
+        title: 'Day 1: Essay Fundamentals',
+        subtopics: ['Structure of an Essay', 'Brainstorming Techniques', 'Introduction & Conclusion Strategies', 'Connecting Paragraphs'],
+      },
+      {
+        id: 'p2_day2',
+        title: 'Day 2: Arguments & Reports',
+        subtopics: ['Argument Writing Format (For/Against)', 'Report Writing Format & Tone', 'Analyzing Previous Topics'],
+      },
+    ],
+  },
   {
     id: 'polity',
     name: 'Polity',
@@ -10,51 +29,6 @@ export const SYLLABUS_DATA: Subject[] = [
         id: 'p_day1',
         title: 'Day 1: Schedules & Preamble',
         subtopics: ['Schedules of Indian Constitution', 'Preamble Objectives', 'Keywords (Sovereign, Socialist, etc.)', 'Amendability of Preamble'],
-      },
-      {
-        id: 'p_day2',
-        title: 'Day 2: Union & Citizenship',
-        subtopics: ['Union & Territory (Art 1-4)', 'States Reorganization', 'Citizenship Act 1955', 'Fundamental Duties'],
-      },
-      {
-        id: 'p_day3',
-        title: 'Day 3: Fundamental Rights I',
-        subtopics: ['Right to Equality (Art 14-18)', 'Right to Freedom (Art 19-22)', 'Preventive Detention'],
-      },
-      {
-        id: 'p_day4',
-        title: 'Day 4: Fundamental Rights II',
-        subtopics: ['Right against Exploitation', 'Freedom of Religion', 'Cultural & Educational Rights', 'Writs (Art 32)'],
-      },
-      {
-        id: 'p_day5',
-        title: 'Day 5: DPSP',
-        subtopics: ['Socialist Principles', 'Gandhian Principles', 'Liberal-Intellectual Principles', 'Uniform Civil Code'],
-      },
-      {
-        id: 'p_day6',
-        title: 'Day 6: Union Executive',
-        subtopics: ['President (Election, Powers, Veto)', 'Vice-President', 'Prime Minister', 'Council of Ministers'],
-      },
-      {
-        id: 'p_day7',
-        title: 'Day 7: Parliament',
-        subtopics: ['Lok Sabha vs Rajya Sabha', 'Sessions of Parliament', 'Bills (Ordinary, Money, Finance)', 'Budget Process'],
-      },
-      {
-        id: 'p_day8',
-        title: 'Day 8: Judiciary',
-        subtopics: ['Supreme Court', 'High Courts', 'Appointment of Judges', 'Judicial Review', 'PIL'],
-      },
-      {
-        id: 'p_day9',
-        title: 'Day 9: State Govt & Local Bodies',
-        subtopics: ['Governor', 'State Legislature', 'Panchayati Raj (73rd Amd)', 'Municipalities (74th Amd)'],
-      },
-      {
-        id: 'p_day10',
-        title: 'Day 10: Constitutional Bodies',
-        subtopics: ['Election Commission', 'UPSC/SPSC', 'Finance Commission', 'CAG', 'Attorney General'],
       },
     ],
   },
@@ -68,31 +42,6 @@ export const SYLLABUS_DATA: Subject[] = [
         title: 'Day 1: Ancient India',
         subtopics: ['Indus Valley Civilization', 'Vedic Age (Early & Later)', 'Buddhism & Jainism', 'Mauryan Empire', 'Gupta Period'],
       },
-      {
-        id: 'h_day2',
-        title: 'Day 2: Medieval India',
-        subtopics: ['Delhi Sultanate (Admin & Art)', 'Mughal Empire (Akbar to Aurangzeb)', 'Vijayanagar Empire', 'Bhakti & Sufi Movements'],
-      },
-      {
-        id: 'h_day3',
-        title: 'Day 3: Modern - European Advent',
-        subtopics: ['Portuguese, Dutch, French, British', 'Carnatic Wars', 'Battle of Plassey & Buxar', 'Land Revenue Systems'],
-      },
-      {
-        id: 'h_day4',
-        title: 'Day 4: Revolt of 1857 & Reforms',
-        subtopics: ['Causes & Failure of 1857 Revolt', 'Socio-Religious Reform Movements', 'Raja Ram Mohan Roy', 'Dayanand Saraswati'],
-      },
-      {
-        id: 'h_day5',
-        title: 'Day 5: Freedom Struggle (1885-1919)',
-        subtopics: ['Formation of INC', 'Moderates vs Extremists', 'Partition of Bengal (1905)', 'Swadeshi Movement', 'Home Rule League'],
-      },
-      {
-        id: 'h_day6',
-        title: 'Day 6: Gandhian Era (1919-1947)',
-        subtopics: ['Non-Cooperation Movement', 'Civil Disobedience', 'Round Table Conferences', 'Quit India Movement', 'Partition & Independence'],
-      },
     ],
   },
   {
@@ -104,26 +53,6 @@ export const SYLLABUS_DATA: Subject[] = [
         id: 'g_day1',
         title: 'Day 1: Physical Geography',
         subtopics: ['Interior of Earth', 'Plate Tectonics', 'Earthquakes & Volcanoes', 'Rock System', 'Landforms'],
-      },
-      {
-        id: 'g_day2',
-        title: 'Day 2: Climatology',
-        subtopics: ['Structure of Atmosphere', 'Insolation & Heat Budget', 'Pressure Belts & Winds', 'Cyclones (Tropical/Temperate)', 'Clouds & Precipitation'],
-      },
-      {
-        id: 'g_day3',
-        title: 'Day 3: Oceanography',
-        subtopics: ['Ocean Floor Relief', 'Temperature & Salinity', 'Ocean Currents', 'Tides & Coral Reefs'],
-      },
-      {
-        id: 'g_day4',
-        title: 'Day 4: Indian Geography I',
-        subtopics: ['Physiography of India', 'Himalayas', 'Northern Plains', 'Peninsular Plateau', 'Coastal Plains'],
-      },
-      {
-        id: 'g_day5',
-        title: 'Day 5: Indian Geography II',
-        subtopics: ['Drainage System (Rivers)', 'Monsoon Mechanism', 'Soils of India', 'Natural Vegetation', 'Agriculture & Irrigation'],
       },
     ],
   },
@@ -137,31 +66,6 @@ export const SYLLABUS_DATA: Subject[] = [
         title: 'Day 1: Physics I',
         subtopics: ['Units & Measurements', 'Motion & Laws of Motion', 'Work, Energy, Power', 'Gravitation'],
       },
-      {
-        id: 's_day2',
-        title: 'Day 2: Physics II',
-        subtopics: ['Light (Reflection/Refraction)', 'Human Eye', 'Electricity & Magnetism', 'Sound & Waves'],
-      },
-      {
-        id: 's_day3',
-        title: 'Day 3: Chemistry I',
-        subtopics: ['Matter & States', 'Atoms & Molecules', 'Structure of Atom', 'Chemical Reactions & Equations'],
-      },
-      {
-        id: 's_day4',
-        title: 'Day 4: Chemistry II',
-        subtopics: ['Acids, Bases, Salts', 'Metals & Non-Metals', 'Carbon & Compounds', 'Periodic Table'],
-      },
-      {
-        id: 's_day5',
-        title: 'Day 5: Biology I',
-        subtopics: ['Cell Structure', 'Tissues', 'Nutrition (Plants/Animals)', 'Digestive & Respiratory Systems'],
-      },
-      {
-        id: 's_day6',
-        title: 'Day 6: Biology II',
-        subtopics: ['Circulatory System', 'Excretion', 'Control & Coordination', 'Reproduction', 'Heredity & Evolution'],
-      },
     ],
   },
   {
@@ -173,16 +77,6 @@ export const SYLLABUS_DATA: Subject[] = [
         id: 'e_day1',
         title: 'Day 1: Macro Economics',
         subtopics: ['National Income (GDP, GNP)', 'Inflation (Types, Causes)', 'Monetary Policy (RBI)', 'Fiscal Policy (Budget)'],
-      },
-      {
-        id: 'e_day2',
-        title: 'Day 2: Banking & External',
-        subtopics: ['Banking System in India', 'Money Market vs Capital Market', 'Balance of Payments', 'Forex & Exchange Rates'],
-      },
-      {
-        id: 'e_day3',
-        title: 'Day 3: Sectors & Schemes',
-        subtopics: ['Agriculture & Green Revolution', 'Industrial Policies', 'Poverty & Unemployment', 'Govt Schemes'],
       },
     ],
   },
@@ -196,16 +90,6 @@ export const SYLLABUS_DATA: Subject[] = [
         title: 'Day 1: Ecology',
         subtopics: ['Ecosystem Structure', 'Food Chain & Food Web', 'Ecological Pyramids', 'Biogeochemical Cycles'],
       },
-      {
-        id: 'env_day2',
-        title: 'Day 2: Biodiversity',
-        subtopics: ['Biodiversity Hotspots', 'IUCN Red List', 'National Parks & Wildlife Sanctuaries', 'Biosphere Reserves'],
-      },
-      {
-        id: 'env_day3',
-        title: 'Day 3: Issues & Acts',
-        subtopics: ['Climate Change & Global Warming', 'Ozone Depletion', 'Pollution (Air, Water, Noise)', 'Environmental Acts (Wildlife Protection, etc.)'],
-      },
     ],
   },
   {
@@ -218,16 +102,192 @@ export const SYLLABUS_DATA: Subject[] = [
         title: 'Day 1: Quantitative I',
         subtopics: ['Number System', 'HCF & LCM', 'Average', 'Percentage', 'Profit & Loss'],
       },
+    ],
+  },
+
+  // --- NEW SUBJECTS ---
+  {
+    id: 'programming',
+    name: 'Programming',
+    icon: 'Code',
+    topics: [
       {
-        id: 'apt_day2',
-        title: 'Day 2: Quantitative II',
-        subtopics: ['Ratio & Proportion', 'Time & Work', 'Time, Speed, Distance', 'Simple & Compound Interest'],
+        id: 'prog_day1',
+        title: 'Day 1: Python Basics',
+        subtopics: ['Variables & Data Types', 'Control Flow (If/Else)', 'Loops (For/While)', 'Functions'],
       },
       {
-        id: 'apt_day3',
-        title: 'Day 3: Reasoning',
-        subtopics: ['Series Completion', 'Coding-Decoding', 'Blood Relations', 'Direction Sense', 'Clocks & Calendars'],
+        id: 'prog_day2',
+        title: 'Day 2: Data Structures',
+        subtopics: ['Lists & Tuples', 'Dictionaries & Sets', 'Stacks & Queues', 'Basic Strings Ops'],
+      },
+      {
+        id: 'prog_day3',
+        title: 'Day 3: OOP',
+        subtopics: ['Classes & Objects', 'Inheritance', 'Polymorphism', 'Encapsulation'],
       },
     ],
   },
+  {
+    id: 'sql',
+    name: 'SQL',
+    icon: 'Database',
+    topics: [
+      {
+        id: 'sql_day1',
+        title: 'Day 1: Basic Queries',
+        subtopics: ['SELECT, FROM, WHERE', 'ORDER BY, LIMIT', 'Distinct', 'Arithmetic Operators'],
+      },
+      {
+        id: 'sql_day2',
+        title: 'Day 2: Joins & Aggregates',
+        subtopics: ['Inner Join', 'Left/Right Join', 'GROUP BY & HAVING', 'COUNT, SUM, AVG'],
+      },
+    ],
+  },
+  {
+    id: 'aiml',
+    name: 'AI & Machine Learning',
+    icon: 'BrainCircuit',
+    topics: [
+      {
+        id: 'ai_day1',
+        title: 'Day 1: Intro to AI',
+        subtopics: ['History of AI', 'Types of AI (Narrow vs General)', 'Supervised Learning', 'Unsupervised Learning'],
+      },
+      {
+        id: 'ai_day2',
+        title: 'Day 2: Algorithms',
+        subtopics: ['Linear Regression', 'Logistic Regression', 'Decision Trees', 'Neural Networks Basics'],
+      },
+    ],
+  },
+  {
+    id: 'powerbi',
+    name: 'Power BI',
+    icon: 'BarChart',
+    topics: [
+      {
+        id: 'bi_day1',
+        title: 'Day 1: Power BI Basics',
+        subtopics: ['Power Query Editor', 'Data Modeling', 'Star Schema', 'Calculated Columns'],
+      },
+      {
+        id: 'bi_day2',
+        title: 'Day 2: DAX & Visuals',
+        subtopics: ['DAX Functions (SUMX, CALCULATE)', 'Creating Measures', 'Filters vs Slicers', 'Dashboards'],
+      },
+    ],
+  },
+  {
+    id: 'english',
+    name: 'English',
+    icon: 'BookA',
+    topics: [
+      {
+        id: 'eng_day1',
+        title: 'Day 1: Grammar Core',
+        subtopics: ['Tenses', 'Articles', 'Prepositions', 'Subject-Verb Agreement'],
+      },
+      {
+        id: 'eng_day2',
+        title: 'Day 2: Vocabulary',
+        subtopics: ['Synonyms & Antonyms', 'Idioms & Phrases', 'One Word Substitution', 'Spelling Rules'],
+      },
+    ],
+  },
+];
+
+export const PREVIOUS_PAPERS: PreviousPaper[] = [
+  { year: 2023, paper1Url: '/papers/2023_paper1.pdf', paper2Url: '/papers/2023_paper2.pdf' },
+  { year: 2022, paper1Url: '/papers/2022_paper1.pdf', paper2Url: '/papers/2022_paper2.pdf' },
+  { year: 2021, paper1Url: '/papers/2021_paper1.pdf', paper2Url: '/papers/2021_paper2.pdf' },
+];
+
+export const TEST_PAPERS: TestPaper[] = [
+  {
+    id: 'mock_1',
+    title: 'CAPF Full Length Mock Test 01',
+    subjectId: 'all',
+    difficulty: 'Medium',
+    duration: 120, 
+    questions: [
+      {
+        id: 101,
+        text: "Which Schedule of the Indian Constitution divides legislative powers between the Union and the States?",
+        options: ["6th Schedule", "7th Schedule", "8th Schedule", "9th Schedule"],
+        correctAnswer: 1,
+        explanation: "The 7th Schedule contains the Union List, State List, and Concurrent List."
+      },
+    ]
+  },
+];
+
+/**
+ * --------------------------------------------------------------------------
+ * CODING PROBLEMS DEFINITION (LeetCode Style) - PYTHON
+ * --------------------------------------------------------------------------
+ */
+export const CODING_PROBLEMS: CodingProblem[] = [
+  {
+    id: 'code_1',
+    title: 'Two Sum',
+    difficulty: 'Easy',
+    description: `Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+    
+You may assume that each input would have exactly one solution, and you may not use the same element twice.`,
+    starterCode: `def twoSum(nums, target):
+    # Write your code here
+    pass`,
+    testCases: [
+      { input: [[2,7,11,15], 9], expected: [0,1] },
+      { input: [[3,2,4], 6], expected: [1,2] },
+      { input: [[3,3], 6], expected: [0,1] }
+    ]
+  },
+  {
+    id: 'code_2',
+    title: 'Palindrome Number',
+    difficulty: 'Easy',
+    description: 'Given an integer x, return true if x is a palindrome, and false otherwise.',
+    starterCode: `def isPalindrome(x):
+    # Write your code here
+    pass`,
+    testCases: [
+      { input: [121], expected: true },
+      { input: [-121], expected: false },
+      { input: [10], expected: false }
+    ]
+  },
+  {
+    id: 'code_3',
+    title: 'Fizz Buzz',
+    difficulty: 'Easy',
+    description: `Given an integer n, return a string list answer (1-indexed) where:
+- answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+- answer[i] == "Fizz" if i is divisible by 3.
+- answer[i] == "Buzz" if i is divisible by 5.
+- answer[i] == i (as a string) if none of the above conditions are true.`,
+    starterCode: `def fizzBuzz(n):
+    # Write your code here
+    pass`,
+    testCases: [
+      { input: [3], expected: ["1","2","Fizz"] },
+      { input: [5], expected: ["1","2","Fizz","4","Buzz"] }
+    ]
+  },
+   {
+    id: 'code_4',
+    title: 'Factorial Calculator',
+    difficulty: 'Medium',
+    description: 'Write a function to calculate the factorial of a number n. If n is negative, return None.',
+    starterCode: `def factorial(n):
+    # Write your code here
+    pass`,
+    testCases: [
+      { input: [5], expected: 120 },
+      { input: [0], expected: 1 },
+      { input: [3], expected: 6 }
+    ]
+  }
 ];
